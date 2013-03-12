@@ -3,12 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Mar 12, 2013 1:51:58 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="Book" table="book" catalog="bookstore">
+    <class name="com.bo.bookstore.po.Book" table="book" catalog="bookstore">
         <id name="id" type="int">
             <column name="id" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="bookInfo" class="BookInfo" fetch="select">
+        <many-to-one name="bookInfo" class="com.bo.bookstore.po.BookInfo" fetch="select">
             <column name="book_info_id" />
         </many-to-one>
         <property name="name" type="string">
