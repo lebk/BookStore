@@ -6,5 +6,5 @@ package com.bo.bookstore.dao;
  */
 public interface BookInfoDao
 {
-
+public boolean addBookInfo();
 }
