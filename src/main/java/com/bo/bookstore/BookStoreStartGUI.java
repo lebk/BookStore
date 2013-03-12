@@ -11,9 +11,9 @@ import javax.swing.SwingUtilities;
 
 import com.bo.bookstore.gui.BookUIManager;
 
-
 /**
- * Author: Terry_Lei Date: 6:01:33 PM
+ * @author: Terry_Lei
+ * @date 2013-3-12 下午2:06:09
  */
 public class BookStoreStartGUI extends JFrame
 {

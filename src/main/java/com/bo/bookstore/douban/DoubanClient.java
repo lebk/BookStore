@@ -13,6 +13,10 @@ import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.io.SAXReader;
+/**
+ * @author: Terry_Lei
+ * @date 2013-3-12 下午2:06:09
+ */
 
 public class DoubanClient
 {

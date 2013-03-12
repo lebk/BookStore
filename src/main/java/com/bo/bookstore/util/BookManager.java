@@ -13,10 +13,8 @@ import com.bo.bookstore.po.Book;
 
 
 /**
- * 
- * Author : Bo
- * 
- * Creation time : 2012-11-28
+ * @author: Terry_Lei
+ * @date 2013-3-12 下午2:06:09
  */
 
 public class BookManager {
