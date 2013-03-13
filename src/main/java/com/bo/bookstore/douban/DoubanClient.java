@@ -87,7 +87,7 @@ public class DoubanClient {
 			e.printStackTrace();
 		}
 		Document doc = getDomElement(responseContent.toString());
-		doc.getFirstChild().
+		
 		logger.info(doc.toString());
 		return responseContent;
 	}
