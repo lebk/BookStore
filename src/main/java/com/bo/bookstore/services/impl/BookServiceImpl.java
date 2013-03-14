@@ -19,12 +19,13 @@ public class BookServiceImpl implements BookService {
 	public boolean addBook(String doubanBookId) {
 
 		SubjectEntry se = DoubanClient.getSubjectEntry(doubanBookId);
-		if (se.getSummary() != null)
-			System.out.println("summary is " + se.getSummary().getPlainText());
+		if (se.getSummary() != null) {
+			logger.info("summary is " + se.getSummary().getPlainText());
+		}
 		logger.info("author is " + se.getAuthors().get(0).getName());
 		String bookName = se.getTitle().getPlainText();
 		logger.info("title is " + bookName);
-        
+
 		bd.addBook(bookName);
 		return true;
 

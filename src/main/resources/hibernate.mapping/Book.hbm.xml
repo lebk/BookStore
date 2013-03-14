@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 12, 2013 1:51:58 PM by Hibernate Tools 3.4.0.CR1 -->
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 14, 2013 5:03:35 PM by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
     <class name="com.bo.bookstore.po.Book" table="book" catalog="bookstore">
-        <id name="id" type="int">
+        <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="bookInfo" class="com.bo.bookstore.po.BookInfo" fetch="select">
             <column name="book_info_id" />

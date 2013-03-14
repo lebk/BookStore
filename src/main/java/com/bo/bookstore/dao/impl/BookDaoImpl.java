@@ -32,6 +32,7 @@ public class BookDaoImpl implements BookDao
 
       transaction = session.beginTransaction();
       Book bk = new Book();
+      bk.setId(12);
       bk.setName(bookName);
       bk.setAddTime(new Date());
       session.save(bk);
