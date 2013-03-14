@@ -24,6 +24,5 @@
 	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-c3p0/3.6.3.Final/hibernate-c3p0-3.6.3.Final.jar"/>
 	<classpathentry kind="var" path="M2_REPO/c3p0/c3p0/0.9.1/c3p0-0.9.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/javassist/javassist/3.17.1-GA/javassist-3.17.1-GA.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Terry_Lei/.m2/repository/com/zhibo/Douban4jOAuth2/1.0/Douban4jOAuth2-1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
