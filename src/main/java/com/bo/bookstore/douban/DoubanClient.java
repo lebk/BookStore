@@ -8,9 +8,9 @@ import com.bo.bookstore.util.DoubanUtil;
 import com.google.gdata.client.douban.DoubanService;
 import com.google.gdata.data.douban.Attribute;
 import com.google.gdata.data.douban.SubjectEntry;
-import com.google.gdata.data.douban.Tag;
 import com.google.gdata.data.extensions.Rating;
 import com.google.gdata.util.ServiceException;
+
 
 /**
  * @author: Terry_Lei

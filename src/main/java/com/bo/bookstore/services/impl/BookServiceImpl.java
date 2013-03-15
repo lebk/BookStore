@@ -15,7 +15,6 @@ public class BookServiceImpl implements BookService {
 	private static Logger logger = Logger.getLogger(BookServiceImpl.class);
 	BookDao bd = new BookDaoImpl();
 
-	@Override
 	public boolean addBook(String doubanBookId) {
 
 		SubjectEntry se = DoubanClient.getSubjectEntry(doubanBookId);
