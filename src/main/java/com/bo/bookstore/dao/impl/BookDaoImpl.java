@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 
 import com.bo.bookstore.dao.BookDao;
 import com.bo.bookstore.po.Book;
+import com.bo.bookstore.po.BookInfo;
 import com.bo.bookstore.util.*;
 
 import org.hibernate.HibernateException;
@@ -33,6 +34,80 @@ public class BookDaoImpl implements BookDao
       transaction = session.beginTransaction();
       Book bk = new Book();
       bk.setId(12);
+      bk.setName(bookName);
+      bk.setAddTime(new Date());
+      session.save(bk);
+      transaction.commit();
+      return true;
+
+    } catch (HibernateException e)
+    {
+
+      transaction.rollback();
+      logger.error(e.toString());
+      e.printStackTrace();
+
+    } finally
+    {
+
+      session.close();
+
+    }
+    logger.error("Add book failed");
+    return false;
+  }
+
+  @Override
+  public boolean addBook(String bookName, Integer book_info_id)
+  {
+    Session session = HibernateUtil.getSessionFactory().openSession();
+
+    Transaction transaction = null;
+
+    try
+    {
+
+      transaction = session.beginTransaction();
+      Book bk = new Book();
+      bk.setId(12);
+
+      bk.setName(bookName);
+      bk.setAddTime(new Date());
+      session.save(bk);
+      transaction.commit();
+      return true;
+
+    } catch (HibernateException e)
+    {
+
+      transaction.rollback();
+      logger.error(e.toString());
+      e.printStackTrace();
+
+    } finally
+    {
+
+      session.close();
+
+    }
+    logger.error("Add book failed");
+    return false;
+  }
+
+  @Override
+  public boolean addBook(String bookName, BookInfo bookInfo)
+  {
+    Session session = HibernateUtil.getSessionFactory().openSession();
+
+    Transaction transaction = null;
+
+    try
+    {
+
+      transaction = session.beginTransaction();
+      Book bk = new Book();
+      bk.setId(12);
+      bk.setBookInfo(bookInfo);
       bk.setName(bookName);
       bk.setAddTime(new Date());
       session.save(bk);
