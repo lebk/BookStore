@@ -46,7 +46,7 @@ public class BookServiceTest
   @Test
   public void testAddBook()
   {
-    String bookId = "2029680";
+    String bookId = "2193876";
     boolean ret = bs.addBook(bookId);
     Assert.assertTrue("should return true when add a book", ret);
   }
@@ -54,7 +54,7 @@ public class BookServiceTest
   @Test
   public void testGetBookByName()
   {
-    String bookName = "资治通鉴";
+    String bookName = "浮士德";
     Book b = bs.getBookByName(bookName);
     logger.info(b.getId());
     logger.info(b.getAddTime());

@@ -15,7 +15,7 @@ public class HomePage extends WebPage
   public HomePage(final PageParameters parameters)
   {
     super(parameters);
-    String bookName = "资治通鉴";
+    String bookName = "浮士德";
     add(new Label("title", bookName));
     add(new Label("summary", getSummary(bookName)));
     // TODO Add your page's components here
