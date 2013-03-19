@@ -4,9 +4,13 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.WebPage;
 
+import com.bo.bookstore.services.BookService;
+import com.bo.bookstore.services.impl.BookServiceImpl;
+
 public class HomePage extends WebPage
 {
   private static final long serialVersionUID = 1L;
+  private BookService bs = new BookServiceImpl();
 
   public HomePage(final PageParameters parameters)
   {
@@ -20,6 +24,6 @@ public class HomePage extends WebPage
 
   private String getSummary(String bookName)
   {
-    return "Helle World Boy";
+    return bs.getBookByName(bookName).getBookInfo().getDescription();
   }
 }

@@ -66,4 +66,10 @@ public class BookServiceImpl implements BookService
     return true;
 
   }
+
+  @Override
+  public Book getBookByName(String bookName)
+  {
+    return bd.getBookByName(bookName);
+  }
 }

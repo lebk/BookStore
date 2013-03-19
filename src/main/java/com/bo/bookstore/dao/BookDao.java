@@ -1,5 +1,6 @@
 package com.bo.bookstore.dao;
 
+import com.bo.bookstore.po.Book;
 import com.bo.bookstore.po.BookInfo;
 
 /**
@@ -14,4 +15,6 @@ public interface BookDao
   public boolean addBook(String bookName, Integer book_info_id);
 
   public boolean addBook(String bookName, BookInfo bookInfo);
+
+  public Book getBookByName(String bookName);
 }

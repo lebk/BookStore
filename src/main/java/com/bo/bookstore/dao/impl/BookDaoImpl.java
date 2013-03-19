@@ -1,6 +1,8 @@
 package com.bo.bookstore.dao.impl;
 
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -129,6 +131,44 @@ public class BookDaoImpl implements BookDao
     }
     logger.error("Add book failed");
     return false;
+  }
+
+  @Override
+  public Book getBookByName(String bookName)
+  {
+    Session session = HibernateUtil.getSessionFactory().openSession();
+
+    Transaction transaction = null;
+
+    try
+    {
+      transaction = session.beginTransaction();
+      List ol = session.createQuery("from Book where name='" + bookName + "'")
+          .list();
+      if (ol.size() == 0)
+      {
+        logger.error("No Book found by the name: " + bookName);
+        return null;
+      }
+
+      for (Iterator it = ol.iterator(); it.hasNext();)
+      {
+        Book o = (Book) it.next();
+        // calling the book size method in order to the BookInfo object is
+        // loaded.
+        logger.info("the book size is:" + o.getBookInfo().getBooks().size());
+        return o;
+      }
+      transaction.commit();
+    } catch (HibernateException e)
+    {
+      transaction.rollback();
+      e.printStackTrace();
+    } finally
+    {
+      session.close();
+    }
+    return null;
   }
 
 }
