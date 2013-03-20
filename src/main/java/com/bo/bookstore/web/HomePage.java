@@ -2,6 +2,7 @@ package com.bo.bookstore.web;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.WebPage;
 
 import com.bo.bookstore.services.BookService;
@@ -19,7 +20,7 @@ public class HomePage extends WebPage
     add(new Label("title", bookName));
     add(new Label("summary", getSummary(bookName)));
     // TODO Add your page's components here
-
+    add(new BookmarkablePageLink<Void>("fileUploadLink", FileUploadPage.class));
   }
 
   private String getSummary(String bookName)
