@@ -1,5 +1,7 @@
 package com.bo.bookstore.services.impl;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.bo.bookstore.dao.BookDao;
@@ -15,7 +17,7 @@ import com.google.gdata.data.douban.SubjectEntry;
 /**
  * Author: lebk.lei@gmail.com Date: 2013-3-14
  */
-public class BookServiceImpl implements BookService
+public class BookServiceImpl implements BookService, java.io.Serializable
 {
   private static Logger logger = Logger.getLogger(BookServiceImpl.class);
   BookDao bd = new BookDaoImpl();
@@ -71,5 +73,12 @@ public class BookServiceImpl implements BookService
   public Book getBookByName(String bookName)
   {
     return bd.getBookByName(bookName);
+  }
+
+  @Override
+  public List<Book> getAllBooks()
+  {
+    // TODO Auto-generated method stub
+    return bd.getAllBooks();
   }
 }

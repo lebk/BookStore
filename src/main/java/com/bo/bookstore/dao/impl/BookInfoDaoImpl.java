@@ -12,7 +12,7 @@ import com.bo.bookstore.po.Book;
 import com.bo.bookstore.po.BookInfo;
 import com.bo.bookstore.util.HibernateUtil;
 
-public class BookInfoDaoImpl implements BookInfoDao
+public class BookInfoDaoImpl implements BookInfoDao, java.io.Serializable
 {
   static Logger logger = Logger.getLogger(BookDaoImpl.class);
 

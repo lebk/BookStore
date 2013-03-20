@@ -9,53 +9,62 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.util.lang.Bytes;
 
-public class FileUploadPage extends WebPage {
+public class FileUploadPage extends WebPage
+{
 
-	private FileUploadField fileUpload;
-	private String UPLOAD_FOLDER = "C:\\";
+  private static final long serialVersionUID = -56016226340014634L;
+  private FileUploadField fileUpload;
+  private String UPLOAD_FOLDER = "C:\\";
 
-	public FileUploadPage(final PageParameters parameters) {
+  public FileUploadPage(final PageParameters parameters)
+  {
 
-		add(new FeedbackPanel("feedback"));
+    add(new FeedbackPanel("feedback"));
 
-		Form<?> form = new Form<Void>("form") {
-			@Override
-			protected void onSubmit() {
+    Form<?> form = new Form<Void>("form")
+      {
+        @Override
+        protected void onSubmit()
+        {
 
-				final FileUpload uploadedFile = fileUpload.getFileUpload();
-				if (uploadedFile != null) {
-					
-					//write to a new file
-					File newFile = new File(UPLOAD_FOLDER
-							+ uploadedFile.getClientFileName());
+          final FileUpload uploadedFile = fileUpload.getFileUpload();
+          if (uploadedFile != null)
+          {
 
-					if (newFile.exists()) {
-						newFile.delete();
-					}
+            // write to a new file
+            File newFile = new File(UPLOAD_FOLDER
+                + uploadedFile.getClientFileName());
 
-					try {
-						newFile.createNewFile();
-						uploadedFile.writeTo(newFile);
+            if (newFile.exists())
+            {
+              newFile.delete();
+            }
 
-						info("saved file: " + uploadedFile.getClientFileName());
-					} catch (Exception e) {
-						throw new IllegalStateException("Error");
-					}
-				}
+            try
+            {
+              newFile.createNewFile();
+              uploadedFile.writeTo(newFile);
 
-			}
+              info("saved file: " + uploadedFile.getClientFileName());
+            } catch (Exception e)
+            {
+              throw new IllegalStateException("Error");
+            }
+          }
 
-		};
+        }
 
-		// Enable multipart mode (need for uploads file)
-		form.setMultiPart(true);
+      };
 
-		// max upload size, 10k
-		form.setMaxSize(Bytes.megabytes(30));
+    // Enable multipart mode (need for uploads file)
+    form.setMultiPart(true);
 
-		form.add(fileUpload = new FileUploadField("fileUpload"));
+    // max upload size, 10k
+    form.setMaxSize(Bytes.megabytes(30));
 
-		add(form);
+    form.add(fileUpload = new FileUploadField("fileUpload"));
 
-	}
+    add(form);
+
+  }
 }

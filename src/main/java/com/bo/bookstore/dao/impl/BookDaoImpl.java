@@ -1,5 +1,6 @@
 package com.bo.bookstore.dao.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -19,7 +20,7 @@ import org.hibernate.Transaction;
  * @author: Terry_Lei
  * @date 2013-3-12 下午2:47:03
  */
-public class BookDaoImpl implements BookDao
+public class BookDaoImpl implements BookDao,java.io.Serializable
 {
   static Logger logger = Logger.getLogger(BookDaoImpl.class);
 
@@ -171,4 +172,41 @@ public class BookDaoImpl implements BookDao
     return null;
   }
 
+  @Override
+  public List<Book> getAllBooks()
+  {
+    List<Book> lb = new ArrayList<Book>();
+    Session session = HibernateUtil.getSessionFactory().openSession();
+
+    Transaction transaction = null;
+
+    try
+    {
+      transaction = session.beginTransaction();
+      List ol = session.createQuery("from Book").list();
+      if (ol.size() == 0)
+      {
+        logger.error("No Book found in the db");
+        return lb;
+      }
+
+      for (Iterator it = ol.iterator(); it.hasNext();)
+      {
+        Book o = (Book) it.next();
+        // calling the book size method in order to the BookInfo object is
+        // loaded.
+        //logger.info("the book size is:" + o.getBookInfo().getBooks().size());
+        lb.add(o);
+      }
+      transaction.commit();
+    } catch (HibernateException e)
+    {
+      transaction.rollback();
+      e.printStackTrace();
+    } finally
+    {
+      session.close();
+    }
+    return lb;
+  }
 }

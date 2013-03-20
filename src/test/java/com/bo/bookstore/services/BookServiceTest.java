@@ -2,6 +2,8 @@ package com.bo.bookstore.services;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -61,5 +63,24 @@ public class BookServiceTest
     logger.info(b.getName());
 
     logger.info(b.getBookInfo().getDescription());
+  }
+
+  @Test
+  public void testGetAllBooks()
+  {
+    List<Book> lb = bs.getAllBooks();
+
+    for (Book b : lb)
+    {
+      if (b.getBookInfo() != null)
+      {
+        logger.info(b.getId() + " : " + b.getName() + " : " + b.getAddTime()
+            + " : " + b.getBookInfo().getId());
+      } else
+      {
+        logger.info(b.getId() + " : " + b.getName() + " : " + b.getAddTime());
+
+      }
+    }
   }
 }
