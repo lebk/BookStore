@@ -12,4 +12,7 @@ public interface BookInfoDao
       Float rateAverage, String description, String comments);
 
   public boolean deleteBookInfo(String doubanReferId);
+
+  public BookInfo getBookInfoById(Integer id);
+
 }

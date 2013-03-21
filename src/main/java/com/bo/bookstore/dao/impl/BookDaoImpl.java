@@ -20,7 +20,7 @@ import org.hibernate.Transaction;
  * @author: Terry_Lei
  * @date 2013-3-12 下午2:47:03
  */
-public class BookDaoImpl implements BookDao,java.io.Serializable
+public class BookDaoImpl implements BookDao, java.io.Serializable
 {
   static Logger logger = Logger.getLogger(BookDaoImpl.class);
 
@@ -144,11 +144,13 @@ public class BookDaoImpl implements BookDao,java.io.Serializable
     try
     {
       transaction = session.beginTransaction();
-      List ol = session.createQuery("from Book where name='" + bookName + "'")
+      List ol = session.createQuery(
+          "from " + Book.class.getName() + " where name='" + bookName + "'")
           .list();
       if (ol.size() == 0)
       {
-        logger.error("No Book found by the name: " + bookName);
+        logger.error("No " + Book.class.getName() + " found by the name: "
+            + bookName);
         return null;
       }
 
@@ -183,7 +185,7 @@ public class BookDaoImpl implements BookDao,java.io.Serializable
     try
     {
       transaction = session.beginTransaction();
-      List ol = session.createQuery("from Book").list();
+      List ol = session.createQuery("from " + Book.class.getName()).list();
       if (ol.size() == 0)
       {
         logger.error("No Book found in the db");
@@ -195,7 +197,7 @@ public class BookDaoImpl implements BookDao,java.io.Serializable
         Book o = (Book) it.next();
         // calling the book size method in order to the BookInfo object is
         // loaded.
-        //logger.info("the book size is:" + o.getBookInfo().getBooks().size());
+        // logger.info("the book size is:" + o.getBookInfo().getBooks().size());
         lb.add(o);
       }
       transaction.commit();
