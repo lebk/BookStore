@@ -12,7 +12,8 @@ import com.bo.bookstore.services.BookInfoService;
 /**
  * Author: lebk.lei@gmail.com Date: 2013-3-21
  */
-public class BookInfoServiceImpl implements BookInfoService
+public class BookInfoServiceImpl implements BookInfoService,
+    java.io.Serializable
 {
   private static Logger logger = Logger.getLogger(BookInfoServiceImpl.class);
   BookInfoDao bid = new BookInfoDaoImpl();
