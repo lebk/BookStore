@@ -9,7 +9,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.util.lang.Bytes;
 
-public class FileUploadPage extends WebPage
+public class FileUploadPage extends BookStoreBasePage
 {
 
   private static final long serialVersionUID = -56016226340014634L;
@@ -51,7 +51,6 @@ public class FileUploadPage extends WebPage
               throw new IllegalStateException("Error");
             }
           }
-
         }
 
       };

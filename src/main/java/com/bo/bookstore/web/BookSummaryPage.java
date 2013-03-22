@@ -21,7 +21,8 @@ import com.bo.bookstore.services.impl.BookServiceImpl;
 /**
  * Author: lebk.lei@gmail.com Date: 2013-3-20
  */
-public class BookSummaryPage extends WebPage implements java.io.Serializable
+public class BookSummaryPage extends BookStoreBasePage implements
+    java.io.Serializable
 {
 
   private static final long serialVersionUID = 7179769981914513602L;
