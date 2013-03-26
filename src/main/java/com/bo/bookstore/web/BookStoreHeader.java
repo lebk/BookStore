@@ -14,6 +14,7 @@ public class BookStoreHeader extends Panel
    * 
    */
   private static final long serialVersionUID = -1788642451893597367L;
+  private static final String storeTitle = "我的书屋";
 
   /**
    * Construct.
@@ -25,11 +26,11 @@ public class BookStoreHeader extends Panel
    * @param page
    *          The example page
    */
-  public BookStoreHeader(String id, String title, WebPage page)
+  public BookStoreHeader(String id, WebPage page)
   {
     super(id);
 
-    add(new Label("title", title));
+    add(new Label("title", storeTitle));
 
   }
 }

@@ -6,8 +6,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.util.string.Strings;
 
 /**
- * Author: lebk.lei@gmail.com
- * Date: 2013-3-22
+ * Author: lebk.lei@gmail.com Date: 2013-3-22
  */
 public class BookStoreBasePage extends WebPage
 {
@@ -34,10 +33,10 @@ public class BookStoreBasePage extends WebPage
     super(pageParameters);
 
     final String packageName = getClass().getPackage().getName();
-    add(new BookStoreHeader("mainNavigation", "我的书屋", this));
+    add(new BookStoreHeader("mainNavigation", this));
+    add(new BookStoreFooter("footer", this));
     explain();
   }
-
 
   /**
    * Construct.
