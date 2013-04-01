@@ -17,8 +17,5 @@
         <property name="addTime" type="timestamp">
             <column name="addTime" length="19" />
         </property>
-        <property name="location" type="string">
-            <column name="location" length="80" />
-        </property>
     </class>
 </hibernate-mapping>

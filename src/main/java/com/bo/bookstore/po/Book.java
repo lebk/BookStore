@@ -11,16 +11,14 @@ public class Book implements java.io.Serializable {
 	private BookInfo bookInfo;
 	private String name;
 	private Date addTime;
-	private String location;
 
 	public Book() {
 	}
 
-	public Book(BookInfo bookInfo, String name, Date addTime, String location) {
+	public Book(BookInfo bookInfo, String name, Date addTime) {
 		this.bookInfo = bookInfo;
 		this.name = name;
 		this.addTime = addTime;
-		this.location = location;
 	}
 
 	public Integer getId() {
@@ -53,14 +51,6 @@ public class Book implements java.io.Serializable {
 
 	public void setAddTime(Date addTime) {
 		this.addTime = addTime;
-	}
-
-	public String getLocation() {
-		return this.location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
 	}
 
 }
