@@ -17,7 +17,7 @@ public class HttpUtil
 
   public static void main(String[] args)
   {
-    String url = "http://img3.douban.com/spic/s41333916.jpg";
+    String url = "http://img3.douban.com/spic/s4133396.jpg";
     downloadFileFrom(url);
   }
 
@@ -37,7 +37,7 @@ public class HttpUtil
       while ((bytesRead = reader.read(buffer)) > 0)
       {
         writer.write(buffer, 0, bytesRead);
-        buffer = new byte[153600];
+        buffer = new byte[10000];
         totalBytesRead += bytesRead;
       }
 
