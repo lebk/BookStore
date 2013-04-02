@@ -48,7 +48,7 @@ public class BookServiceTest
   @Test
   public void testAddBook()
   {
-    String bookId = "2193876";
+    String bookId = "10768068";
     boolean ret = bs.addBook(bookId);
     Assert.assertTrue("should return true when add a book", ret);
   }
