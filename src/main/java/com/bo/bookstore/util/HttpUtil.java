@@ -26,7 +26,7 @@ public class HttpUtil
     try
     {
       long startTime = System.currentTimeMillis();
-      logger.info("Connecting to the site...\n");
+      logger.info("Try to download: " + url);
       URL _url = new URL(url);
       _url.openConnection();
       InputStream reader = _url.openStream();
