@@ -12,6 +12,8 @@ import com.bo.bookstore.douban.DoubanClient;
 import com.bo.bookstore.po.Book;
 import com.bo.bookstore.po.BookInfo;
 import com.bo.bookstore.services.BookService;
+import com.bo.bookstore.util.HttpUtil;
+import com.google.gdata.data.Link;
 import com.google.gdata.data.douban.SubjectEntry;
 
 /**
@@ -42,9 +44,22 @@ public class BookServiceImpl implements BookService, java.io.Serializable
     logger.info("title is " + bookName);
     logger.info("douban id is " + se.getId());
     logger.info("averge rating is:" + rateAverage);
-
+    String coverPicUrl = "";
+    for (Link link : se.getLinks())
+    {
+      logger.info("  " + link.getRel() + " is " + link.getHref());
+      if (link.getRel().equals("image"))
+      {
+        coverPicUrl = link.getHref();
+      }
+    }
+    String localPicUrl = "";
+    if (!coverPicUrl.equals(""))
+    {
+      localPicUrl = HttpUtil.downloadFileFrom(coverPicUrl);
+    }
     BookInfo bi = bid.addBookInfo(doubanReferId, author, rateAverage,
-        description, comment);
+        description, comment, coverPicUrl, localPicUrl);
 
     if (bi == null)
     {

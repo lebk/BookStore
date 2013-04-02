@@ -21,8 +21,9 @@ public class HttpUtil
     downloadFileFrom(url);
   }
 
-  public static boolean downloadFileFrom(String url)
+  public static String downloadFileFrom(String url)
   {
+    String LocalPath;
     try
     {
       long startTime = System.currentTimeMillis();
@@ -30,7 +31,10 @@ public class HttpUtil
       URL _url = new URL(url);
       _url.openConnection();
       InputStream reader = _url.openStream();
-      FileOutputStream writer = new FileOutputStream("C:/MyBooks/s4133396.jpg");
+      String basePath = BookStoreConfigUtil.getBookBasePath();
+      LocalPath = basePath + "/" + getFileName(url);
+      logger.info("The file will be stored at:" + LocalPath);
+      FileOutputStream writer = new FileOutputStream(LocalPath);
       byte[] buffer = new byte[153600];
       int totalBytesRead = 0;
       int bytesRead = 0;
@@ -52,8 +56,16 @@ public class HttpUtil
 
     {
       logger.error("Fail to download the file:" + e.getMessage());
-      return false;
+      return "";
     }
-    return true;
+    return LocalPath;
+  }
+
+  public static String getFileName(String url)
+  {
+    String fileName = url.substring(url.lastIndexOf("/") + 1);
+    logger.info("The pic name is:" + fileName);
+    return fileName;
+
   }
 }

@@ -26,7 +26,8 @@ public class BookInfoDaoImpl implements BookInfoDao, java.io.Serializable
 
   @Override
   public BookInfo addBookInfo(String doubanReferId, String author,
-      Float rateAverage, String description, String comments)
+      Float rateAverage, String description, String comments,
+      String doubanCoverPicUrl, String localCoverPicUrl)
   {
     Session session = HibernateUtil.getSessionFactory().openSession();
 
@@ -41,6 +42,8 @@ public class BookInfoDaoImpl implements BookInfoDao, java.io.Serializable
       bki.setDoubanReferId(doubanReferId);
       bki.setRateAverage(rateAverage);
       bki.setDescription(description);
+      bki.setDoubanCoverPicUrl(doubanCoverPicUrl);
+      bki.setLocalCoverPicUrl(localCoverPicUrl);
 
       session.save(bki);
       transaction.commit();

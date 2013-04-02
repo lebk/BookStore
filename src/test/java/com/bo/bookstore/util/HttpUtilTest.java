@@ -44,8 +44,8 @@ public class HttpUtilTest
   @Test
   public void testDownloadFileFrom()
   {
-    boolean ret = HttpUtil.downloadFileFrom(url);
-    Assert.assertTrue("Should download the cover pic successfully", ret);
+    String localPath = HttpUtil.downloadFileFrom(url);
+    Assert.assertTrue("Should download the cover pic successfully", !localPath.equals(""));
 
   }
 

@@ -9,7 +9,8 @@ import com.bo.bookstore.po.BookInfo;
 public interface BookInfoDao
 {
   public BookInfo addBookInfo(String doubanReferId, String author,
-      Float rateAverage, String description, String comments);
+      Float rateAverage, String description, String comments,
+      String doubanCoverPicUrl, String localCoverPicUrl);
 
   public boolean deleteBookInfo(String doubanReferId);
 
