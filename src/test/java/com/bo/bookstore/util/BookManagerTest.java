@@ -7,6 +7,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.bo.bookstore.demo.BookManager;
+
 /**
  * Author: Terry_Lei Date: 2:17:16 PM
  */

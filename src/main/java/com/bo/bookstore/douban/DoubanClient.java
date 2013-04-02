@@ -6,9 +6,11 @@ import org.apache.log4j.Logger;
 
 import com.bo.bookstore.util.DoubanUtil;
 import com.google.gdata.client.douban.DoubanService;
+import com.google.gdata.data.Category;
 import com.google.gdata.data.Link;
 import com.google.gdata.data.douban.Attribute;
 import com.google.gdata.data.douban.SubjectEntry;
+import com.google.gdata.data.douban.Tag;
 import com.google.gdata.data.extensions.Rating;
 import com.google.gdata.util.ServiceException;
 
@@ -68,6 +70,11 @@ public class DoubanClient
     {
       logger.info("  " + link.getRel() + " is " + link.getHref());
     }
+    for (Tag t : se.getTags())
+    {
+      logger.info("The tag is: " + t.getName());
+    }
+
     logger.info("-------------------");
 
   }
