@@ -2,6 +2,7 @@ package com.bo.bookstore.web;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.resource.ResourceReference;
 
 /**
  * Application object for your web application. If you want to run this
@@ -28,6 +29,7 @@ public class WicketApplication extends WebApplication
   {
     super.init();
 
-    // add your configuration here
+   final String resourceId="images";
+   
   }
 }
