@@ -39,15 +39,21 @@ public class BookSummaryPage extends BookStoreBasePage implements
 
     list = bs.getAllBooks();
     logger.info("begin to show the book information!");
-    final DataView dataView = new DataView("simple", new ListDataProvider(list))
+    final DataView dataView = new DataView("book", new ListDataProvider(list))
       {
         @Override
         public void populateItem(final Item item)
         {
           final Book b = (Book) item.getModelObject();
-          // item.add(new Label("id", b.getId()));
-          item.add(new Label("name", b.getName()));
-          item.add(new Image("image", new PackageResourceReference(
+          item.add(new Image("image1", new PackageResourceReference(
+              BookSummaryPage.class, "s4133396.jpg")));
+          item.add(new Image("image2", new PackageResourceReference(
+              BookSummaryPage.class, "s4133396.jpg")));
+          item.add(new Image("image3", new PackageResourceReference(
+              BookSummaryPage.class, "s4133396.jpg")));
+          item.add(new Image("image4", new PackageResourceReference(
+              BookSummaryPage.class, "s4133396.jpg")));
+          item.add(new Image("image5", new PackageResourceReference(
               BookSummaryPage.class, "s4133396.jpg")));
         
         }
