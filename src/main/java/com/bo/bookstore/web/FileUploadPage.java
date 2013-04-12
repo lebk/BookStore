@@ -19,7 +19,6 @@ public class FileUploadPage extends BookStoreBasePage
   public FileUploadPage(final PageParameters parameters)
   {
 
-    add(new FeedbackPanel("feedback"));
 
     Form<?> form = new Form<Void>("form")
       {
