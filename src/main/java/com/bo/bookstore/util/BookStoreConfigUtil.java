@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
+import org.apache.wicket.Application;
 
 public class BookStoreConfigUtil
 {
@@ -32,6 +33,7 @@ public class BookStoreConfigUtil
     
      String baseDir = System.getProperty("user.dir");
      String propertiesName = "BookStoreConfig.properties";
+    
      logger.info("basedir: " + baseDir);
      // Temp fix about,Deploy the product env
      
