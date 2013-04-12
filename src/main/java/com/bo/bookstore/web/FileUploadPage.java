@@ -41,7 +41,7 @@ public class FileUploadPage extends BookStoreBasePage
 
           PageParameters pageParameters = new PageParameters();
           pageParameters.add("doubanAddr", addrValue);
-          setResponsePage(SuccessPage.class, pageParameters);
+          setResponsePage(UploadFileSuccessPage.class, pageParameters);
 
         }
 

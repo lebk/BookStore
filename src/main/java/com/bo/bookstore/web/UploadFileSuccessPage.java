@@ -12,11 +12,11 @@ import com.bo.bookstore.util.DoubanUtil;
 /**
  * Author: lebk.lei@gmail.com Date: 2013-4-12
  */
-public class SuccessPage extends WebPage
+public class UploadFileSuccessPage extends BookStoreBasePage
 {
-  private static Logger logger = Logger.getLogger(SuccessPage.class);
+  private static Logger logger = Logger.getLogger(UploadFileSuccessPage.class);
 
-  public SuccessPage(final PageParameters parameters)
+  public UploadFileSuccessPage(final PageParameters parameters)
   {
 
     String referUrl = "";
