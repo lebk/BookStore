@@ -54,6 +54,7 @@ public class BookServiceImpl implements BookService, java.io.Serializable
       }
     }
     String localPicUrl = "";
+    logger.info("The cover pic url is:" + coverPicUrl);
     if (!coverPicUrl.equals(""))
     {
       localPicUrl = HttpUtil.downloadFileFrom(coverPicUrl);

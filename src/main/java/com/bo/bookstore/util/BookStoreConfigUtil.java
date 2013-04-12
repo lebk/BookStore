@@ -29,15 +29,17 @@ public class BookStoreConfigUtil
 
   private static String getBookStoreConfigDir()
   {
-    String baseDir = System.getProperty("user.dir");
+    // String baseDir = System.getProperty("user.dir");
+    //
+    // logger.info("basedir: " + baseDir);
+    // String bookstoreConfig = (baseDir +
+    // "/src/main/resources/BookStoreConfig.properties")
+    // .replaceAll("%20", " ");
 
-    logger.info("basedir: " + baseDir);
-    String bookstoreConfig = (baseDir + "/src/main/resources/BookStoreConfig.properties")
-        .replaceAll("%20", " ");
-
-    BookStoreConfigUtil object = new BookStoreConfigUtil();
-
-    return bookstoreConfig;
+    String path = BookStoreConfigUtil.class.getClass().getClassLoader()
+        .getResource("").getPath();
+    logger.info("The path is:" + path);
+    return path;
 
   }
 
@@ -54,7 +56,6 @@ public class BookStoreConfigUtil
       logger.info("bookstpre path: " + bookstoreconfig);
 
       is = new FileInputStream(bookstoreconfig);
-
       properties.load(is);
     } catch (IOException e)
     {
