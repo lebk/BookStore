@@ -29,17 +29,40 @@ public class BookStoreConfigUtil
 
   private static String getBookStoreConfigDir()
   {
-    // String baseDir = System.getProperty("user.dir");
-    //
-    // logger.info("basedir: " + baseDir);
-    // String bookstoreConfig = (baseDir +
-    // "/src/main/resources/BookStoreConfig.properties")
-    // .replaceAll("%20", " ");
+    
+     String baseDir = System.getProperty("user.dir");
+     String propertiesName = "BookStoreConfig.properties";
+     logger.info("basedir: " + baseDir);
+     // Temp fix about,Deploy the product env
+     
+     if (baseDir.equalsIgnoreCase("/"))
+     {
+       return "/opt/vmfactory/webapps/VMFactory/WEB-INF/classes/" + propertiesName;
+     }
+     
+     String bookstoreConfig = (baseDir + "/src/main/resources/" + propertiesName).replaceAll("%20", " ");
 
-    String path = BookStoreConfigUtil.class.getClass().getClassLoader()
-        .getResource("").getPath();
-    logger.info("The path is:" + path);
-    return path;
+
+     if (bookstoreConfig.contains("tomcat"))
+
+     {
+       logger.info("deploy to tomcat, redrirect to the property file's location");
+       if (bookstoreConfig.contains("bin"))
+       {
+         // If deploy to Tomcat server (the tomcat starts from %TOMCAT_HOME%,
+         // use following file path.
+
+         bookstoreConfig = (baseDir + "\\..\\webapps\\bookstore-0.1\\WEB-INF\\classes\\" + propertiesName).replaceAll("%20", " ");
+       } else
+       {
+         // The tomcat is started by Eclipse Tomcat plugin,%TOMCAT_HOME%
+         bookstoreConfig = (baseDir + "\\webapps\\bookstore-0.1\\WEB-INF\\classes\\" + propertiesName).replaceAll("%20", " ");
+
+       }
+     }
+       
+
+    return bookstoreConfig;
 
   }
 
