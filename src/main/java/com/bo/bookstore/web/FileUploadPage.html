@@ -6,10 +6,12 @@
 <body>
 	<span wicket:id="mainNavigation" />
 	<p>
-		<b>豆瓣连接:</b>
+		<b>豆瓣连接:</b> 
+		你要上传书籍的豆瓣链接：比如，http://book.douban.com/subject/1141406， <a href="http://book.douban.com/subject_search?search_text=简爱">去豆瓣搜索</a>
 	</p>
 	<form wicket:id="addrForm">
-		地址是: <input type="text" wicket:id="address" ,size="120"><br>
+
+		<label>地址是:</label> <input type="text" wicket:id="address" ,size="120"/><br>
 		<input type="submit" value="提交" />
 	</form>
 	<form wicket:id="uploadForm">
@@ -21,8 +23,6 @@
 	<span wicket:id="footer" />
 </body>
 </html>
-
-
 
 
 
