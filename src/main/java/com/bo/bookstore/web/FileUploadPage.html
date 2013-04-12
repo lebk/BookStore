@@ -5,14 +5,17 @@
 </head>
 <body>
 	<span wicket:id="mainNavigation" />
-	<p><b>豆瓣连接:</b></p>
-	<form>
-	 地址是: <input type="text" name="address",size="120"><br>
+	<p>
+		<b>豆瓣连接:</b>
+	</p>
+	<form wicket:id="addrForm">
+		地址是: <input type="text" wicket:id="address" ,size="120"><br>
+		<input type="submit" value="提交" />
 	</form>
-	<form wicket:id="form">
+	<form wicket:id="uploadForm">
 		<p>
 			<label>选择文件 :</label> <input wicket:id="fileUpload" size="40"
-				type="file" /> <input type="submit" value="Upload" />
+				type="file" /> <input type="submit" value="上传" />
 		</p>
 	</form>
 	<span wicket:id="footer" />

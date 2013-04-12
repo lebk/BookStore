@@ -2,6 +2,8 @@ package com.bo.bookstore.web;
 
 import java.io.File;
 import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.form.UrlTextField;
 import org.apache.wicket.markup.html.form.upload.FileUpload;
 import org.apache.wicket.markup.html.form.upload.FileUploadField;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
@@ -14,13 +16,25 @@ public class FileUploadPage extends BookStoreBasePage
 
   private static final long serialVersionUID = -56016226340014634L;
   private FileUploadField fileUpload;
+  private TextField address;
   private String UPLOAD_FOLDER = "C:\\";
 
   public FileUploadPage(final PageParameters parameters)
   {
 
+    Form<?> addrForm = new Form<Void>("addrForm")
+      {
+        @Override
+        protected void onSubmit()
+        {
+          // get the entered password and pass to next page
+          PageParameters pageParameters = new PageParameters();
+          pageParameters.add("address", address.getModelObject());
 
-    Form<?> form = new Form<Void>("form")
+        }
+      };
+
+    Form<?> uploadForm = new Form<Void>("uploadForm")
       {
         @Override
         protected void onSubmit()
@@ -55,14 +69,15 @@ public class FileUploadPage extends BookStoreBasePage
       };
 
     // Enable multipart mode (need for uploads file)
-    form.setMultiPart(true);
+    uploadForm.setMultiPart(true);
 
     // max upload size, 10k
-    form.setMaxSize(Bytes.megabytes(30));
+    uploadForm.setMaxSize(Bytes.megabytes(30));
 
-    form.add(fileUpload = new FileUploadField("fileUpload"));
-
-    add(form);
+    uploadForm.add(fileUpload = new FileUploadField("fileUpload"));
+    addrForm.add(address = new TextField("address"));
+    add(addrForm);
+    add(uploadForm);
 
   }
 }
