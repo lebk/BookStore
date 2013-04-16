@@ -60,6 +60,7 @@ public class BookSummaryPage extends BookStoreBasePage implements
       };
 
     dataView.setItemsPerPage(10);
+  
 
     add(dataView);
     add(new PagingNavigator("navigator", dataView));
