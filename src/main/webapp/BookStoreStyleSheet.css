@@ -19,6 +19,9 @@ margin-right: 10px;
 
 #bookArea img
 {
+padding: 45px;
+border-color:black;
+background-color:AliceBlue;
 margin-left:20px;
 margin-right: 20px;
 }
