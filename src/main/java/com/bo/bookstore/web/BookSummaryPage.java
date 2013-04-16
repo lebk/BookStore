@@ -59,7 +59,7 @@ public class BookSummaryPage extends BookStoreBasePage implements
         }
       };
 
-    dataView.setItemsPerPage(10);
+    dataView.setItemsPerPage(4);
   
 
     add(dataView);
