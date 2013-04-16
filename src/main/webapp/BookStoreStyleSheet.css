@@ -10,16 +10,15 @@ body {
 
 #bookArea{
 padding: 25px;
-border-color:black;
 margin-left:10px;
 margin-right: 10px;
 }
 
 #bookArea img
 {
-padding: 30px;
+padding: 25px;
 border-color:black;
 background-color:#C0C0C0;
-margin-left:2px;
-margin-right: 2px;
+margin-left:2%;
+margin-right: 2%;
 }
