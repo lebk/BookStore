@@ -4,7 +4,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.resource.ResourceReference;
 
-import com.bo.bookstore.web.pages.BookSummaryPage;
+import com.bo.bookstore.web.pages.HomePage;
 
 /**
  * Application object for your web application. If you want to run this
@@ -12,15 +12,13 @@ import com.bo.bookstore.web.pages.BookSummaryPage;
  * 
  * @see com.bo.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
-{
-  /**
-   * @see org.apache.wicket.Application#getHomePage()
-   */
-  @Override
-  public Class<? extends WebPage> getHomePage()
-  {
-    return BookSummaryPage.class;
-  }
+public class WicketApplication extends WebApplication {
+	/**
+	 * @see org.apache.wicket.Application#getHomePage()
+	 */
+	@Override
+	public Class<? extends WebPage> getHomePage() {
+		return HomePage.class;
+	}
 
 }

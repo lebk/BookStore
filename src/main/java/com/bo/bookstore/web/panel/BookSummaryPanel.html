@@ -2,11 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>我的书库</title>
 <link rel="stylesheet" type="text/css" href="BookStoreStyleSheet.css" />
 </head>
 <body>
-	<div id="header" wicket:id="headerPanel"></div>
+<wicket:panel>
 	<div id="content">
 	<div id="headOfContentPanel"><a href="#" wicket:id="fileUploadLink"><h3>upload</h3></a></div>
 	<br/>
@@ -26,8 +25,8 @@
 						height="96" width="68"></a></td>
 			</tr>
 		</table>
-	</div>
-	</div>
-	<div id="footer" wicket:id="footerPanel" />
+	  </div>
+	  </div>
+	</wicket:panel>
 </body>
 </html>

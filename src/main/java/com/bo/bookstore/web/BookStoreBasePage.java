@@ -11,51 +11,18 @@ import com.bo.bookstore.web.header.BookStoreHeaderPanel;
 /**
  * Author: lebk.lei@gmail.com Date: 2013-3-22
  */
-public class BookStoreBasePage extends WebPage
-{
-  /**
+public class BookStoreBasePage extends WebPage {
+	/**
    * 
    */
-  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-  /**
-   * Constructor
-   */
-  public BookStoreBasePage()
-  {
-    this(new PageParameters());
-  }
+	/**
+	 * Constructor
+	 */
+	public BookStoreBasePage() {
+		add(new BookStoreHeaderPanel("headerPanel"));
+		add(new BookStoreFooterPanel("footerPanel"));
+	}
 
-  /**
-   * Constructor
-   * 
-   * @param pageParameters
-   */
-  public BookStoreBasePage(final PageParameters pageParameters)
-  {
-    super(pageParameters);
-
-    final String packageName = getClass().getPackage().getName();
-    add(new BookStoreHeaderPanel("headerPanel"));
-    add(new BookStoreFooterPanel("footerPanel"));
-    
-    explain();
-  }
-
-  /**
-   * Construct.
-   * 
-   * @param model
-   */
-  public BookStoreBasePage(IModel<?> model)
-  {
-    super(model);
-  }
-
-  /**
-   * Override base method to provide an explanation
-   */
-  protected void explain()
-  {
-  }
 }
