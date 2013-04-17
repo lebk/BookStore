@@ -1,9 +1,9 @@
-package com.bo.bookstore.web;
+package com.bo.bookstore.web.footer;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
 
-public class BookStoreFooter extends Panel {
+public class BookStoreFooterPanel extends Panel {
 
 	/**
 	   * 
@@ -19,7 +19,7 @@ public class BookStoreFooter extends Panel {
 	 * @param exampleTitle
 	 *            title of the example
 	 */
-	public BookStoreFooter(String id) {
+	public BookStoreFooterPanel(String id) {
 		super(id);
 
 		add(new Label("Contact", ContactInfo));

@@ -1,4 +1,4 @@
-package com.bo.bookstore.web;
+package com.bo.bookstore.web.header;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -7,7 +7,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 /**
  * Author: lebk.lei@gmail.com Date: 2013-3-22
  */
-public class BookStoreHeader extends Panel
+public class BookStoreHeaderPanel extends Panel
 {
   /**
    * 
@@ -23,7 +23,7 @@ public class BookStoreHeader extends Panel
    * @param exampleTitle
    *          title of the example
    */
-  public BookStoreHeader(String id)
+  public BookStoreHeaderPanel(String id)
   {
     super(id);
 

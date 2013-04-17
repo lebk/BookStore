@@ -1,4 +1,4 @@
-package com.bo.bookstore.web;
+package com.bo.bookstore.web.pages;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +19,8 @@ import com.bo.bookstore.services.BookInfoService;
 import com.bo.bookstore.services.BookService;
 import com.bo.bookstore.services.impl.BookInfoServiceImpl;
 import com.bo.bookstore.services.impl.BookServiceImpl;
+import com.bo.bookstore.web.BookStoreBasePage;
+import com.bo.bookstore.web.FileUploadPage;
 
 /**
  * Author: lebk.lei@gmail.com Date: 2013-3-20
