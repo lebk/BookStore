@@ -1,21 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>我的书库</title>
+<meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="BookStoreStyleSheet.css" />
 </head>
 <body>
 	<div wicket:id="feedback"></div>
 	<span wicket:id="headerPanel" />
 	<p>
-		<b>豆瓣连接:</b> 你要上传书籍的豆瓣链接：比如，http://book.douban.com/subject/1141406， <a
-			href="http://book.douban.com/subject_search?search_text=简爱">去豆瓣搜索</a>
+		<a href="http://book.douban.com/subject_search?search_text=jane">search</a>
 	</p>
 	<form wicket:id="uploadForm">
-
-		<label>地址是:</label> <input type="text" wicket:id="doubanAddr"
-			,size="120" /><br> <input type="submit" value="提交" />
+		<label>the address is:</label> <input type="text" wicket:id="doubanAddr" size="120" /><br> <input type="submit" value="submit" />
 	</form>
 	<!-- 	<form wicket:id="uploadForm">
 		<p>
@@ -26,6 +22,3 @@
 	<span wicket:id="footerPanel" />
 </body>
 </html>
-
-
-
