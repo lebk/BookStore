@@ -21,15 +21,4 @@ public class WicketApplication extends WebApplication
     return BookSummaryPage.class;
   }
 
-  /**
-   * @see org.apache.wicket.Application#init()
-   */
-  @Override
-  public void init()
-  {
-    super.init();
-
-   final String resourceId="images";
-   
-  }
 }

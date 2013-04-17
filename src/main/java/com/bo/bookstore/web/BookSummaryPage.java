@@ -63,7 +63,7 @@ public class BookSummaryPage extends BookStoreBasePage implements
   
 
     add(dataView);
-    add(new PagingNavigator("navigator", dataView));
+    add(new PagingNavigator("bookNavigator", dataView));
     add(new BookmarkablePageLink<Void>("fileUploadLink", FileUploadPage.class));
   }
 
