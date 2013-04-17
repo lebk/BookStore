@@ -190,6 +190,8 @@
 					<outputDirectory>C:\Servers\apache-tomcat\webapps\</outputDirectory>
 				</configuration>
 			</plugin>
+			
 		</plugins>
+		<finalName>bookstore</finalName>
 	</build>
 </project>
