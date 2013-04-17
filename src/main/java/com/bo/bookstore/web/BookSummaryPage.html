@@ -6,28 +6,28 @@
 <link rel="stylesheet" type="text/css" href="BookStoreStyleSheet.css" />
 </head>
 <body>
-	<span wicket:id="mainNavigation" />
+	<div wicket:id="headerPanel"></div>
 	<div style="float: right;">
 		<a href="#" wicket:id="fileUploadLink">upload</a>
 	</div>
-	<br/>
+	<br />
 	<div wicket:id="navigator"></div>
 	<div id="bookArea">
-	<table>
-		<tr wicket:id="book">
-			<td><a href="BookDetailPage.html"><img wicket:id="image1"
-					height="96" width="68"></a></td>
-			<td><a href="BookDetailPage.html"><img wicket:id="image2"
-					height="96" width="68"></a></td>
-			<td><a href="BookDetailPage.html"><img wicket:id="image3"
-					height="96" width="68"></a></td>
-			<td><a href="BookDetailPage.html"><img wicket:id="image4"
-					height="96" width="68"></a></td>
-			<td><a href="BookDetailPage.html"><img wicket:id="image5"
-					height="96" width="68"></a></td>
-		</tr>
-	</table>
-</div>
-<span wicket:id="footer" />
+		<table>
+			<tr wicket:id="book">
+				<td><a href="BookDetailPage.html"><img wicket:id="image1"
+						height="96" width="68"></a></td>
+				<td><a href="BookDetailPage.html"><img wicket:id="image2"
+						height="96" width="68"></a></td>
+				<td><a href="BookDetailPage.html"><img wicket:id="image3"
+						height="96" width="68"></a></td>
+				<td><a href="BookDetailPage.html"><img wicket:id="image4"
+						height="96" width="68"></a></td>
+				<td><a href="BookDetailPage.html"><img wicket:id="image5"
+						height="96" width="68"></a></td>
+			</tr>
+		</table>
+	</div>
+	<span wicket:id="footerPanel" />
 </body>
 </html>
