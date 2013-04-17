@@ -1,17 +1,28 @@
-body {
-	background-color: #d2b48c;
-	margin-left: 20%;
-	margin-right: 20%;
-	border: 2px dotted black;
-	padding: 10px 10px 10px 10px;
-	font-family: sans-serif;
+
+#header{
+	width : 100%;
+	height : 15%;
+	background-color : #092E67;
+	margin-top : 0;
+	padding-top : 10px;
+	z-index : 0;
+}
+
+#footer {
+	position : absolute;
+	bottom : 0;
+	width : 99%;
+	height : 8%;
+	background-color : #6493D2;
+	text-align:center;
 
 }
 
 #bookArea{
 padding: 25px;
-margin-left:10px;
-margin-right: 10px;
+margin-left:20%;
+margin-right: 20%;
+
 }
 
 #bookArea img
@@ -21,4 +32,23 @@ border-color:black;
 background-color:#C0C0C0;
 margin-left:2%;
 margin-right: 2%;
+}
+
+a, a:visited, a:hover, a:active {
+	color : #6493D2;
+}
+h1 {
+	padding : 0; margin:0;
+	font-size:200%;
+	color:#FF5500;
+}
+h2 {
+	padding : 0; margin:0;
+	font-size:150%;
+	color:#FF5500;
+}
+h3 {
+	padding : 0; margin:0;
+	font-size:120%;
+	color:#092E67;
 }
