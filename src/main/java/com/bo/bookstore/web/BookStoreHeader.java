@@ -1,6 +1,5 @@
 package com.bo.bookstore.web;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -23,10 +22,8 @@ public class BookStoreHeader extends Panel
    *          id of the component
    * @param exampleTitle
    *          title of the example
-   * @param page
-   *          The example page
    */
-  public BookStoreHeader(String id, WebPage page)
+  public BookStoreHeader(String id)
   {
     super(id);
 

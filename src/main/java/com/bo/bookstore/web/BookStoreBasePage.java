@@ -33,8 +33,8 @@ public class BookStoreBasePage extends WebPage
     super(pageParameters);
 
     final String packageName = getClass().getPackage().getName();
-    add(new BookStoreHeader("mainNavigation", this));
-    add(new BookStoreFooter("footer", this));
+    add(new BookStoreHeader("mainNavigation"));
+    add(new BookStoreFooter("footer"));
     explain();
   }
 
