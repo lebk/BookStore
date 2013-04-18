@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>我的书库</title>
+<link rel="stylesheet" type="text/css" href="BookStoreStyleSheet.css" />
+</head>
+<body>
+<wicket:panel>
+	<div id="content">
+	<div wicket:id="feedback"></div>
+	<p>
+		the addres like: http://book.douban.com/subject/1141406, 
+		<a href="http://book.douban.com/subject_search?search_text=jane">go to search</a>
+	</p>
+	<form wicket:id="uploadForm">
+		<label>the address is:</label> <input type="text" wicket:id="doubanAddr" size="120" /><br> <input type="submit" value="submit" />
+	</form>
+	<!-- 	<form wicket:id="uploadForm">
+		<p>
+			<label>选择文件 :</label> <input wicket:id="fileUpload" size="40"
+				type="file" /> <input type="submit" value="上传" />
+		</p>
+	</form> -->
+	</div>
+	</wicket:panel>
+</body>
+</html>

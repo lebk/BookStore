@@ -21,7 +21,7 @@ import com.bo.bookstore.services.BookService;
 import com.bo.bookstore.services.impl.BookInfoServiceImpl;
 import com.bo.bookstore.services.impl.BookServiceImpl;
 import com.bo.bookstore.web.BookStoreBasePage;
-import com.bo.bookstore.web.FileUploadPage;
+import com.bo.bookstore.web.pages.FileUploadPage;
 
 /**
  * Author: lebk.lei@gmail.com Date: 2013-3-20
