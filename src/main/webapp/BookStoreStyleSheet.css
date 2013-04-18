@@ -25,9 +25,7 @@ width:5%;
 }
 
 #footer {
-    bottom:0;
-	position:absolute;
-	width : 100%;
+	width : 99%;
 	height : 8%;
 	background-color : #6493D2;
 	text-align:center;
@@ -35,13 +33,12 @@ width:5%;
 }
 
 #bookArea{
-padding: 25px;
 
 }
 
 #bookArea img
 {
-padding: 25px;
+padding: 20%;
 background-color:#C0C0C0;
 margin-left:2%;
 margin-right: 2%;
