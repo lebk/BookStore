@@ -56,7 +56,7 @@ public class BookServiceTest
   @Test
   public void testGetBookByName()
   {
-    String bookName = "浮士德";
+    String bookName = "寻欢作乐";
     Book b = bs.getBookByName(bookName);
     logger.info(b.getId());
     logger.info(b.getAddTime());
