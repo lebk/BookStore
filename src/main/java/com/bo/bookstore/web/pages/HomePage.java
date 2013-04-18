@@ -26,16 +26,18 @@ import com.bo.bookstore.web.panel.BookSummaryPanel;
 /**
  * Author: lebk.lei@gmail.com Date: 2013-3-20
  */
-public class HomePage extends BookStoreBasePage {
+public class HomePage extends BookStoreBasePage
+{
 
-	private static final long serialVersionUID = 7179769981914513602L;
-	BookService bs = new BookServiceImpl();
-	BookInfoService bis = new BookInfoServiceImpl();
-	private static Logger logger = Logger.getLogger(BookSummaryPanel.class);
+  private static final long serialVersionUID = 7179769981914513602L;
+  BookService bs = new BookServiceImpl();
+  BookInfoService bis = new BookInfoServiceImpl();
+  private static Logger logger = Logger.getLogger(BookSummaryPanel.class);
 
-	public HomePage() {
+  public HomePage()
+  {
 
-		super();
-		this.add(new BookSummaryPanel("contentPanel"));
-	}
+    super();
+    add(new BookSummaryPanel("contentPanel"));
+  }
 }
