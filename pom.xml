@@ -180,7 +180,7 @@
 				<artifactId>maven-eclipse-plugin</artifactId>
 				<version>2.9</version>
 				<configuration>
-					<downloadSources>false</downloadSources>
+					<downloadSources>true</downloadSources>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -195,7 +195,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.14.1</version>
 				<configuration>
-					<skipTests>false</skipTests>
+					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 		</plugins>
